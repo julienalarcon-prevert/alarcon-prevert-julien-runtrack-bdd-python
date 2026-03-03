@@ -10,13 +10,13 @@ try :
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT SUM(superficie) FROM etage")
+    cursor.execute("SELECT SUM(capacite) FROM salle")
 
     resultat = cursor.fetchone()
 
     superficie_totale = resultat[0]
 
-    print(f"La superficie de la plateforme est de {superficie_totale} m2")
+    print(f"La capacité de toutes les salles est de : {superficie_totale}")
 
 except mysql.connector.Error as e:
     print(f"Erreur de connexion : {e}")
